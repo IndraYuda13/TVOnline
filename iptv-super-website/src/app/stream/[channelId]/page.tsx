@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { getEnrichedChannels, EnrichedChannel } from '@/lib/data';
 import VideoPlayer from '@/components/ui/VideoPlayer';
 
-export default function StreamPage({ params }: { params: { channelId: string } }) {
+export default function StreamPage({ params: { channelId } }: { params: { channelId: string } }) {
   const [channel, setChannel] = useState<EnrichedChannel | null>(null);
   const [loading, setLoading] = useState(true);
   const [streamUrl, setStreamUrl] = useState<string | null>(null);
@@ -13,7 +13,7 @@ export default function StreamPage({ params }: { params: { channelId: string } }
   useEffect(() => {
     async function fetchChannel() {
       const channels = await getEnrichedChannels();
-      const foundChannel = channels.find((c) => c.id === params.channelId);
+      const foundChannel = channels.find((c) => c.id === channelId);
       setChannel(foundChannel || null);
       if (foundChannel && foundChannel.streams.length > 0) {
         setStreamUrl(foundChannel.streams[0].url);
@@ -21,7 +21,7 @@ export default function StreamPage({ params }: { params: { channelId: string } }
       setLoading(false);
     }
     fetchChannel();
-  }, [params.channelId]);
+  }, [channelId]);
 
   if (loading) {
     return (
