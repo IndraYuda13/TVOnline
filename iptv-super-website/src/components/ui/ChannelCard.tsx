@@ -8,9 +8,9 @@ interface ChannelCardProps {
 
 export default function ChannelCard({ channel }: ChannelCardProps) {
   return (
-    <Link href={`/stream/${channel.id}`}>
+    <Link href={`/stream/${channel.id}`} className="block">
       <div className="group relative block overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
-        <div className="aspect-w-16 aspect-h-9">
+        <div className="aspect-video">
           <img
             src={channel.logo}
             alt={channel.name}
