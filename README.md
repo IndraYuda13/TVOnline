@@ -1,22 +1,71 @@
 # TVOnline
 
-Website untuk menonton TV dari berbagai negara dengan memanfaatkan IPTV data sources.
+Website untuk menonton channel TV dari berbagai negara dengan antarmuka modern berbasis web.
 
 ## Overview
 
-This repository contains source code and related assets for **TVOnline**.
+`TVOnline` adalah proyek front-end berbasis Next.js yang menampilkan daftar channel IPTV dan memungkinkan pengguna memfilter channel berdasarkan negara, kategori, dan bahasa sebelum memutar stream langsung di browser.
 
-## Project Info
+Repository ini saat ini berpusat pada aplikasi utama yang berada di folder:
 
-- Primary language: TypeScript
-- Default branch: feature-iptv-super-website
-- Topics: iptv, streaming, typescript, webapp
+- `iptv-super-website/`
+
+## Highlights
+
+- katalog channel IPTV dalam tampilan grid
+- filter berdasarkan negara, kategori, dan bahasa
+- pencarian channel
+- video playback langsung di browser
+- UI modern berbasis Next.js + React + TypeScript
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- HLS.js
+
+## Project Structure
+
+```text
+TVOnline/
+├── iptv-super-website/
+│   ├── src/app/
+│   ├── src/components/
+│   ├── src/lib/
+│   └── package.json
+└── README.md
+```
+
+## Local Development
+
+Masuk ke folder aplikasi utama:
+
+```bash
+cd iptv-super-website
+npm install
+npm run dev
+```
+
+Buka:
+
+```text
+http://localhost:3000
+```
+
+## Key Files
+
+- `iptv-super-website/src/app/page.tsx` - halaman utama aplikasi
+- `iptv-super-website/src/components/ChannelGrid.tsx` - tampilan grid channel
+- `iptv-super-website/src/components/StreamPlayer.tsx` - logic pemutaran stream
+- `iptv-super-website/src/lib/data.ts` - data enrichment / pengolahan data channel
 
 ## Notes
 
-- This repository is part of the overall GitHub portfolio cleanup and documentation pass.
-- More detailed documentation, setup steps, or screenshots may be added later if needed.
+- README root ini difokuskan untuk menjelaskan gambaran besar repo.
+- Dokumentasi teknis aplikasi Next.js ada juga di `iptv-super-website/README.md`.
 
-## License
+## Status
 
-License information has not been added yet.
+Project ini cocok dijadikan dasar untuk eksplorasi IPTV web app, filtering channel, dan browser-based streaming UI.
