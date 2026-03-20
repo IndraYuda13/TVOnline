@@ -1,0 +1,5 @@
+# root-level hygiene
+prod.log
+jules-scratch/
+*.log
+__pycache__/
