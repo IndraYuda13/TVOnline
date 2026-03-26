@@ -4,7 +4,8 @@
 [![App](https://img.shields.io/badge/app-Next.js%2016-000000?logo=next.js)](./iptv-super-website)
 [![React](https://img.shields.io/badge/react-19-149eca?logo=react)](./iptv-super-website/package.json)
 [![TypeScript](https://img.shields.io/badge/language-TypeScript-3178c6?logo=typescript&logoColor=white)](./iptv-super-website)
-[![CI](https://img.shields.io/github/actions/workflow/status/IndraLawliet13/TVOnline/nextjs-ci.yml?branch=feature-iptv-super-website&label=ci)](https://github.com/IndraLawliet13/TVOnline/actions/workflows/nextjs-ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/IndraLawliet13/TVOnline/nextjs-ci.yml?branch=main&label=ci)](https://github.com/IndraLawliet13/TVOnline/actions/workflows/nextjs-ci.yml)
+[![Release](https://img.shields.io/github/v/release/IndraLawliet13/TVOnline?display_name=tag)](https://github.com/IndraLawliet13/TVOnline/releases)
 [![Status](https://img.shields.io/badge/status-portfolio%20showcase-7c3aed)](https://github.com/IndraLawliet13/TVOnline)
 
 TVOnline is a portfolio-ready IPTV web application built with Next.js. It focuses on browsing public channel metadata, filtering large channel lists, and playing compatible streams directly in the browser with a clean modern UI.
@@ -97,12 +98,20 @@ It does **not** include:
 - no screenshot/demo asset is included yet in this repo
 - no deployment config is documented yet
 
+## Release Baseline
+
+The repository now has a baseline release/tag flow for portfolio presentation.
+
+- release notes live on GitHub Releases
+- repository-level changes are summarized in [`CHANGELOG.md`](./CHANGELOG.md)
+- release discipline notes live in [`docs/RELEASES.md`](./docs/RELEASES.md)
+
 ## License Status
 
-A formal open-source license file is **not** included yet.
+This repository now includes an explicit no-license notice in [`LICENSE.md`](./LICENSE.md).
 
-That means reuse terms are currently not explicitly granted. If this repo is intended to be broadly reusable, adding a deliberate LICENSE file should be the next cleanup step rather than guessing one blindly.
+That improves clarity without guessing a legal open-source license. Unless the owner later publishes a different license, reuse rights are not granted by default.
 
 ## Branch / Default Branch Note
 
-The current default branch is `feature-iptv-super-website`. The codebase is usable as-is, but a future branch presentation cleanup to a standard default branch name such as `main` would make the repo look more polished.
+The repository is intended to use the standard `main` default branch for cleaner presentation, while older branch references may still exist temporarily for compatibility.

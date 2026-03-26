@@ -85,3 +85,5 @@ If the upstream API is unavailable, rate-limited, changed, or a stream goes offl
 - this folder contains the main application inside the parent `TVOnline` repository
 - no local `.env` file is required for the current implementation
 - no screenshot assets are committed in this repo yet
+- repository-level release notes live in `../CHANGELOG.md`
+- repository reuse terms are intentionally restricted in `../LICENSE.md`
