@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "refresh:playable": "node scripts/refresh-playable-channels.mjs",
+    "refresh:playable:worker": "bash scripts/run-playable-refresh.sh"
   },
   "dependencies": {
     "hls.js": "^1.6.13",

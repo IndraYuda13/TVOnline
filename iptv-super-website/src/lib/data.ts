@@ -7,12 +7,12 @@ export interface Channel {
   alt_names?: string[];
   network?: string;
   owners?: string[];
-  country: string;
+  country?: string;
   subdivision?: string;
   city?: string;
-  broadcast_area: string[];
-  languages: string[];
-  categories: string[];
+  broadcast_area?: string[];
+  languages?: string[];
+  categories?: string[];
   is_nsfw: boolean;
   launched?: string;
   closed?: string;
@@ -68,6 +68,10 @@ export const getLanguages = () => fetchFromApi<Language[]>('languages.json');
 export const getCategories = () => fetchFromApi<Category[]>('categories.json');
 
 export interface EnrichedChannel extends Channel {
+  country: string;
+  broadcast_area: string[];
+  languages: string[];
+  categories: string[];
   streams: Stream[];
 }
 
@@ -98,6 +102,10 @@ export async function getEnrichedChannels(): Promise<EnrichedChannel[]> {
   return channels
     .map((channel) => ({
       ...channel,
+      country: channel.country ?? '',
+      broadcast_area: channel.broadcast_area ?? [],
+      languages: channel.languages ?? [],
+      categories: channel.categories ?? [],
       logo: logosByChannel.get(channel.id) || channel.logo,
       streams: streamsByChannel.get(channel.id) || [],
     }))

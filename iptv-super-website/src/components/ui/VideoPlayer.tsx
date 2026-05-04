@@ -14,9 +14,11 @@ export default function VideoPlayer({ src }: VideoPlayerProps) {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+    let hls: Hls | null = null;
+    let onLoadedMetadata: (() => void) | null = null;
 
     if (Hls.isSupported()) {
-      const hls = new Hls();
+      hls = new Hls();
       hls.loadSource(src);
       hls.attachMedia(video);
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
@@ -24,10 +26,21 @@ export default function VideoPlayer({ src }: VideoPlayerProps) {
       });
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       video.src = src;
-      video.addEventListener('loadedmetadata', () => {
+      onLoadedMetadata = () => {
         video.play();
-      });
+      };
+      video.addEventListener('loadedmetadata', onLoadedMetadata);
     }
+
+    return () => {
+      if (onLoadedMetadata) {
+        video.removeEventListener('loadedmetadata', onLoadedMetadata);
+      }
+
+      if (hls) {
+        hls.destroy();
+      }
+    };
   }, [src]);
 
   return <video ref={videoRef} controls width="100%" height="100%" />;

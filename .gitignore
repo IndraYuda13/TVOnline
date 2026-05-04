@@ -3,3 +3,6 @@ prod.log
 jules-scratch/
 *.log
 __pycache__/
+
+# local runtime
+run/

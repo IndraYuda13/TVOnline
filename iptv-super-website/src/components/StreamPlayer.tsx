@@ -6,17 +6,18 @@ import VideoPlayer from '@/components/ui/VideoPlayer';
 
 interface StreamPlayerProps {
   channel: EnrichedChannel;
+  streamUrl?: string;
 }
 
-export default function StreamPlayer({ channel }: StreamPlayerProps) {
-  const streamUrl = channel.streams[0]?.url;
+export default function StreamPlayer({ channel, streamUrl }: StreamPlayerProps) {
+  const activeStreamUrl = streamUrl ?? channel.streams[0]?.url;
 
   return (
     <div>
       <h1 className="text-4xl font-bold mb-4">{channel.name}</h1>
       <div className="aspect-w-16 aspect-h-9 mb-8">
-        {streamUrl ? (
-          <VideoPlayer src={streamUrl} />
+        {activeStreamUrl ? (
+          <VideoPlayer src={activeStreamUrl} />
         ) : (
           <div className="flex justify-center items-center bg-black">
             <p>No stream available for this channel.</p>
